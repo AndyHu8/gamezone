@@ -2,12 +2,12 @@ import { View, Button } from "react-native";
 import { globalStyles } from "../../styles/global";
 import { Formik } from 'formik';
 
-export default function ReviewForm() {
+export default function ReviewForm({ addReview }) {
     return (
         <View style={globalStyles.container}>
             <Formik initialValues={{ title: '', body: '', rating: ''}}
             onSubmit={(values) => {
-
+                addReview(values);
             }}
             >
                 {(props) => (
