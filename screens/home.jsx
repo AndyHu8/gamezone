@@ -3,6 +3,7 @@ import { View, Text, Button, FlatList, TouchableOpacity, StyleSheet } from "reac
 import { globalStyles } from "../../styles/global";
 import Card from "../shared/card";
 import { MaterialIcons } from "@expo/vector-icons";
+import ReviewForm from './reviewForm';
 
 export default function Home({ navigation }) {
 
@@ -24,7 +25,7 @@ export default function Home({ navigation }) {
             <Modal visible={modalOpen} animationType="slide">
                 <View style={styles.modalContent}>
                     <MaterialIcons style={{...styles.modalToggle, ...styles.modalClose}} name="close" size={24} onPress={() => setModalOpen(false)}/>
-                    <Text>Hello from the modal</Text>
+                    <ReviewForm/>
                 </View>
             </Modal>
 
@@ -44,7 +45,7 @@ export default function Home({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    modalToggle: {
+    modalToggle: {    
         marginBottom: 10,
         borderWidth: 1,
         borderColor: "#f2f2f2",
